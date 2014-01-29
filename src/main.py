@@ -11,9 +11,9 @@ def print_narratives(file_path):
     
     with open('narratives.txt','w') as output_file:
         for student in data:
-            output_file.write('{}: '.format(student['name']))
+            output_file.write('{}: '.format(student['name']) + '\n')
             output_file.write(narrative(student))
-            output_file.write('\n')
+            output_file.write('\n\n')
     
 def main():
     parser = argparse.ArgumentParser(description='Create narratives')

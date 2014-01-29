@@ -21,9 +21,9 @@ def gender(response):
         return {'subject':'she','object':'her','possessive':'her'}
 
 def grades(student):
-    response = "{0}'s semester grade in Geometry is {1}.  The breakdown of "\
-               "this is {2}% exams/quizzes, {3}% homework, {4}% participation"\
-               ", and {5}% binder.".format(student['name'],student['average'],
+    response = "{0}'s semester grade in Geometry is {1:.0f}%.  The breakdown of "\
+               "this is {2:.0f}% exams/quizzes, {3:.0f}% homework, {4:.0f}% participation"\
+               ", and {5:.0f}% binder.".format(student['name'],student['average'],
                                            student['exams/quizzes'],student['homework'],
                                            student['participation'],student['binder'])
     return response
@@ -76,15 +76,15 @@ def avg_with_hw(student):
     else:
         response = '{0} should work on improving in the homework component of this class for next semester.'\
                    ' If {1} had submitted all homework assignments complete and on time, {3} class average'\
-                   ' would have been {4}%.  This is a significant difference.'\
-                    .format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'],student['20-(e/100)(20)+C'])
+                   ' would have been {4:.0f}%.  This is a significant difference.'\
+                    .format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'],student['20-(e/100)(20)+c'])
         return response
 
 def improve_exams(student):
     gender_nouns = gender(student['gender'])
     if yes_value(student['improve on exams?']):
-        response = 'Next semester, {0} should focus on improving {3} exam scores. To better prepare for exams, {0} should cover up completed classwork and redo the same problems. {1} can then check {3} new answers with {3} old answers.'\
-                   .format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'])
+        response = 'Next semester, {0} should focus on improving {3} exam scores. To better prepare for exams, {0} should cover up completed classwork and redo the same problems. {4} can then check {3} new answers with {3} old answers.'\
+                   .format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'], gender_nouns['subject'].upper())
     else:
         response = 'I commend {0} for {3} strong performance on exams and hope to see this consistent performance next semester as well! '.format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'])
     return response
@@ -174,7 +174,7 @@ def first_name(student):
     full_name = student['name']
     names = full_name.split()
     if len(names) > 1:
-        return names[0]
+        return names[1]
     else:
         return full_name
     
