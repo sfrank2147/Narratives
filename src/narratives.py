@@ -104,71 +104,6 @@ def mastery(student):
         response = '{0} is missing mastery in every topic covered this semester and will therefore have an MBA.  {0} must work on improving in all the areas mentioned above in order to be successful next semester.'.format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'])
     return response
 
-    
-
-# #functions for generating strings based on response of user
-# def average(student):
-#     response = ''
-#     try:
-#         response = "{0} currently has an average of {1:.0f}. ".format\
-#                             (student['name'],student['current average'])
-#     except KeyError:
-#         pass
-#     return response
-# 
-# def participates(student):
-#     gender_nouns = gender(student['gender'])
-#     if yes_value(student['participates?']):
-#         return ('{0} always manages to push the class forward in mathematical'
-#                 ' discussion by commenting on what other students have to say'
-#                 ' or offering new questions to consider. '
-#                 ).format(gender_nouns['subject'].capitalize())
-#     else:
-#         return ('{0} could get more out of this class if {1} participated '
-#                 'more actively. ').format(gender_nouns['subject'].capitalize(),
-#                                           gender_nouns['subject'])
-# 
-# def strong_ability(student):
-#     gender_nouns = gender(student['gender'])
-#     if yes_value(student['strong math ability?']):
-#         return ('{0} is a student with strong mathematical ability. '
-#                 ).format(student['name'].capitalize())
-#     else:
-#         return ''
-# 
-# def does_homework(student):
-#     gender_nouns = gender(student['gender'])
-#     if not yes_value(student['does homework?']):
-#         return('{0} does not finish {2} homework regularly and on time. '
-#                'If {1} did, it would help {2} grade significantly. '
-#                ).format(student['name'].capitalize(),gender_nouns['subject'],
-#                         gender_nouns['possessive'])
-#     else:
-#         return ''
-# 
-# def on_time(student):
-#     gender_nouns = gender(student['gender'])
-#     if not yes_value(student['on time?']):
-#         return ('{0} is frequently late to class, which is significantly '
-#                 'impacting {1} performance. '
-#                 ).format(student['name'].capitalize(),gender_nouns['possessive'])
-#     else:
-#         return ''
-# 
-# def tutoring(student):
-#     gender_nouns = gender(student['gender'])
-#     if yes_value(student['should attend tutoring?']):
-#         return ('{0} should attend tutoring regularly in order to make sure '
-#             'that {1} succeeds in my class. '
-#              ).format(student['name'].capitalize(), gender_nouns['subject'])
-#     else:
-#         return ''
-# 
-# def additional_comments(student):
-#     try:
-#         return student['additional comments?']
-#     except KeyError:
-#         return ''
 
 def first_name(student):
     full_name = student['name']
@@ -185,13 +120,6 @@ def narrative(student):
     
     #generate narrative
     narrative = ''
-#     narrative += average(student)
-#     narrative += strong_ability(student)
-#     narrative += participates(student)
-#     narrative += does_homework(student)
-#     narrative += on_time(student)
-#     narrative += tutoring(student)
-#     narrative += additional_comments(student)
     narrative += grades(student) + ' '
     narrative += participation(student) + ' '
     narrative += on_time(student) + ' '
