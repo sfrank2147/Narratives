@@ -56,7 +56,6 @@ def participation(student):
                    ' missing a crucial study tool.  When it is time to do practice problems, {1} quickly falls behind.  This may'\
                    ' be because {1} has no examples to refer to.  This lost practice has been carrying over to {0}\'s exam grades as well.'\
                     .format(student['name'],gender_nouns['subject'],gender_nouns['object'], gender_nouns['possessive'])
-    #silently return none if user screws up
     return response
 
 def on_time(student):
