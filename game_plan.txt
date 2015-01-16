@@ -1,6 +1,0 @@
-First, extract data:
-
-extract top row.  each entry should be put into lower case.
-** Assume top row is all strings.  If not, throw an error.
-
-Record the column number for each category.
