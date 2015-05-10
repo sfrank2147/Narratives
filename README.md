@@ -1,5 +1,7 @@
 Narratives
 ==========
+A small program I wrote to help my wife write student narratives every quarter (she's a high school teacher).
+
 Usage instructions:
 
 * Install the dependencies.  If you're using pip, you can just use the Requirements file that's in the repo.
